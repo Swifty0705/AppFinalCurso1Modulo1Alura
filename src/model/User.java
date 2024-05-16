@@ -1,12 +1,15 @@
 package model;
 
+import java.util.Scanner;
+
 public class User {
+
     static int id;
     private String username;
-    private String password;
     private String email;
     private String phone;
     private String address;
+    Scanner sc = new Scanner(System.in);
 
     public User(String username, String email) {
         this.username = username;
@@ -19,23 +22,15 @@ public class User {
     }
 
     public String getUsername() {
-        return username;
+        return "Username: "+username;
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getEmail() {
-        return email;
+        return "Correo electronico: "+ email;
     }
 
     public void setEmail(String email) {
@@ -43,7 +38,7 @@ public class User {
     }
 
     public String getPhone() {
-        return phone;
+        return"Telefono: "+ phone;
     }
 
     public void setPhone(String phone) {
@@ -51,11 +46,29 @@ public class User {
     }
 
     public String getAddress() {
-        return address;
+        return "Dirección: "+address;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public void writeUser(){
+        System.out.println("Digite el email");
+        this.setEmail(sc.nextLine());
+        System.out.println("Digite la dirección");
+        this.setAddress(sc.nextLine());
+        System.out.println("Digite el telefono");
+        this.setPhone(sc.nextLine());
+    }
+
+    public void readUser(){
+        System.out.println(this.getId());
+        System.out.println(this.getUsername());
+        System.out.println(this.getEmail());
+        System.out.println(this.getPhone());
+        System.out.println(this.getAddress());
+    }
+
 
 }
